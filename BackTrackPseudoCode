@@ -1,0 +1,64 @@
+# Algorithm to backtrack the route function
+
+function routePacket(fabric, start, goal):
+   rows = number of rows in fabric
+   cols = number of columns in fabric
+   
+   visited = 2D array initialized to false
+   
+   if backtrack(start.row, start.col):
+       return true  // valid route found
+   else
+       return false // no valid route
+
+
+
+
+Get Node.row.down
+
+If the Node.row.down is Greater than rows OR is Null OR is equal to 503 Then
+	Get Node.row.left
+
+Else If Node is equal to Goal
+	return true
+	
+Else
+	Add the Node to the visitors array
+	Call the IsBackTrack method with Node.row+1 and Node.col
+End If
+
+---
+
+If the Node.row.left is Less than columns OR is Null OR is equal to 503 Then
+	Get Node.row.right
+Else If Node is equal to Goal
+	return true
+Else
+	Add the Node to the visitors array
+	Call the IsBackTrack method with Node.row and Node.col-1
+End If
+
+---
+
+If the Node.row.right is Greater than columns OR is Null OR is equal to 503 Then
+	Get Node.row.up
+Else If Node is equal to Goal
+	return true
+Else
+	Add the Node to the visitors array
+	Call the IsBackTrack method with Node.row and Node.col+1
+End If
+
+---
+
+If the Node.row.up is Greater than columns OR is Null OR is equal to 503 Then
+	Return False
+Else If Node is equal to Goal
+	return true
+Else
+	Add the Node to the visitors array
+	Call the IsBackTrack method with Node.row-1 and Node.col
+End If
+
+---
+
