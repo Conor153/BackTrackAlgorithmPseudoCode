@@ -12,7 +12,7 @@ function routePacket(fabric, start, goal):
        return false // no valid route
 
 
-Start of BackTrack method
+Start of BackTrack function
 
 	Get Node.row.down
 
@@ -24,7 +24,7 @@ Start of BackTrack method
 		
 	Else
 		Add the Node to the visitors array
-		Call the IsBackTrack method with Node.row+1 and Node.col
+		Call the BackTrack function with Node.row+1 and Node.col
 	End If
 
 	---
@@ -35,7 +35,7 @@ Start of BackTrack method
 		return true
 	Else
 		Add the Node to the visitors array
-		Call the IsBackTrack method with Node.row and Node.col-1
+		Call the BackTrack function with Node.row and Node.col-1
 	End If
 
 	---
@@ -46,7 +46,7 @@ Start of BackTrack method
 		return true
 	Else
 		Add the Node to the visitors array
-		Call the IsBackTrack method with Node.row and Node.col+1
+		Call the BackTrack function with Node.row and Node.col+1
 	End If
 
 	---
@@ -57,10 +57,10 @@ Start of BackTrack method
 		return true
 	Else
 		Add the Node to the visitors array
-		Call the IsBackTrack method with Node.row-1 and Node.col
+		Call the BackTrack function with Node.row-1 and Node.col
 	End If
 
 	---
 
-End of BackTrack method
+End of BackTrack function
 
