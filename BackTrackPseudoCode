@@ -1,5 +1,6 @@
 # Algorithm to backtrack the route function
 
+Start of routePacket function 
 function routePacket(fabric, start, goal):
    rows = number of rows in fabric
    cols = number of columns in fabric
@@ -11,23 +12,26 @@ function routePacket(fabric, start, goal):
    else
        return false // no valid route
 
+End of routePacket function
+
+
+Currently No Good
+Re change the nameing of these nodes
+If the Node.row.down is Greater than rows OR is Null can be done together
+Not is equal to 503 Then
+
+I am calling recursively to check current nodes 
+Once they are clear I can move the the next node
+dependent on my direction
 
 Start of BackTrack function
 
-	Get Node.row.down
-
-	If the Node.row.down is Greater than rows OR is Null OR is equal to 503 Then
-		Get Node.row.left
-
+	If Node is Greater than rows OR is Null OR Node is equal to 503
+		return false
+	Else If Node is equal in the Visited Array
 	Else If Node is equal to Goal
 		return true
-		
-	Else
-		Add the Node to the visitors array
-		Call the BackTrack function with Node.row+1 and Node.col
 	End If
-
-	---
 
 	If the Node.row.left is Less than columns OR is Null OR is equal to 503 Then
 		Get Node.row.right
