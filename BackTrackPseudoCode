@@ -15,56 +15,39 @@ function routePacket(fabric, start, goal):
 End of routePacket function
 
 
-Currently No Good
-Re change the nameing of these nodes
-If the Node.row.down is Greater than rows OR is Null can be done together
-Not is equal to 503 Then
-
-I am calling recursively to check current nodes 
-Once they are clear I can move the the next node
-dependent on my direction
-
 Start of BackTrack function
 
-	If Node is Greater than rows OR is Null OR Node is equal to 503
+	//Check that Node is valid
+
+	If Node row is Greater than rows OR the Nodes row is Less than 0 OR Node column is Greater than columns OR the Nodes column is less than 0
+		return false
+	Else if Node is Null OR Node is equal to 503
 		return false
 	Else If Node is equal in the Visited Array
+		return false
+	//Check that Node is our goal
 	Else If Node is equal to Goal
 		return true
 	End If
+	
+	
+	//Mark the node as visited
+	Visited[row of the Node][Column of the Node]= true
 
-	If the Node.row.left is Less than columns OR is Null OR is equal to 503 Then
-		Get Node.row.right
-	Else If Node is equal to Goal
+	//Move through fabric
+	//Move downward
+	If Call BackTrack function with a Node where row +1 and column stays the same
 		return true
-	Else
-		Add the Node to the visitors array
-		Call the BackTrack function with Node.row and Node.col-1
-	End If
-
-	---
-
-	If the Node.row.right is Greater than columns OR is Null OR is equal to 503 Then
-		Get Node.row.up
-	Else If Node is equal to Goal
+	//Move right
+	Else If Call backtrack function with a Node where row stays the same and column +1
 		return true
-	Else
-		Add the Node to the visitors array
-		Call the BackTrack function with Node.row and Node.col+1
-	End If
-
-	---
-
-	If the Node.row.up is Greater than columns OR is Null OR is equal to 503 Then
-		Return False
-	Else If Node is equal to Goal
+	//Move Left
+	Else If Call backtrack function with a Node where row stays the same and column -1
 		return true
-	Else
-		Add the Node to the visitors array
-		Call the BackTrack function with Node.row-1 and Node.col
-	End If
-
-	---
+	//Move up
+	Else If Call backtrack function with a Node where row -1 and column stays the same
+		return true
+	
 
 End of BackTrack function
 
